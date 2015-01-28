@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript Learning</title>
+</head>
+<body>
+  <h1>Javascript Learning</h1>
+  <script>
+    function fibonacciSet(max) {
+        if (max > 1){
+            var fibList = [1];
+            var currentFib = 1;
+            while (currentFib < max){
+                var lenFib = fibList.length;
+                fibList.push(currentFib);
+                currentFib = fibList[lenFib-1] + fibList[lenFib-2];
+            return fibList;
+            }       /* Closes the while statement */
+        }           /* Closes the if statement */
+        else{
+            return [1, 1];
+            }       /* Closes else statement */
+        }           /* Closes the if statement */
+          /* Closes max statement */
+
+    function isEven(n){
+        return (n%2 === 0);
+    }
+
+    function sum(n1, n2){
+        return (n1 + n2);
+    }
+
+    function filter(aFunction, aList){
+        for (var i = 0; i < aList.length; i++){
+            newList = [];
+            var condition = aFunction(aList);
+            if (condition === true) {
+                newList.push(i);
+            }
+        }
+        return newList
+    }
+
+    console.log(sum(filter(isEven, fibonacciSet(4000000))))
+  </script>
+</body>
+</html>
