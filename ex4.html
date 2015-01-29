@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Javascript Exercise 4!</h1>
+    <script type="text/javascript">
+       
+   var cat = {
+        tiredness: 20,
+        hunger: 20,
+        loneliness: 3,
+        happiness: 15,
+        obedience: -5000,
+        feed: function () {
+            console.log("Om nom nom")
+            this.hunger = this.hunger - 5;
+        }
+        play: function () {
+            console.log("bat bat bat!!! !!")
+            this.happiness = this.happiness + 5;
+        }
+        pet: function () {
+            console.log("prrrrrrrrrr")
+            this.loneliness = this.loneliness - 1;
+        }
+        waterbottle: function () {
+            console.log("ftftft")
+            this.obedience = this.obedience + 1.5;
+        }
+        print: function() {
+            console.log('Cat status is' + 'tiredness' + cat['tiredness'])  
+        }
+    };  
+
+    </script>
+</body>
+</html>

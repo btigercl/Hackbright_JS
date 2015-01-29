@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> JavaScript Learning</title>
+</head>
+<body>
+    <h1> Javascript Ex 3! </h1>
+    <script>
+    function duplicates(aList) {                
+        var dupList = [];                               // initialize an empty list to hold duplicate items
+        for (var i=0; i < aList.length; i++) {          // set up an iteration: start with the first item in the list and iterate through all items, increment i by 1
+            var item = aList[i];                        // bind item to the value associated with that item in aList (which is passed to function as a parameter)
+            for (var n = i + 1; n < aList.length; n++){ // create another loop with another iteration variable n to represent the item in the list that follows the first iteration item
+                var testItem = aList[n];                // assign testItem to the value associated with n
+                if (item === testItem && dupList.indexOf(item) === -1){ // if item is testItem & the item is not in the duplicate list, 
+                    dupList.push(item);         // add the item to dupList
+                }
+            }
+        }
+        return dupList          
+    }
+
+    console.log(duplicates(["katie", "true", true, 19, "gargoyles", "!", 2 + 3, "2 + 3", 
+    19, "19", 19 === "19", 6, false, false]))
+    </script>
+</body>
+</html> 
