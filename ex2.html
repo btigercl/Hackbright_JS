@@ -7,42 +7,48 @@
   <h1>Javascript Learning</h1>
   <script>
     function fibonacciSet(max) {
-        if (max > 1){
+        if (max > 1) {
             var fibList = [1];
             var currentFib = 1;
-            while (currentFib < max){
-                var lenFib = fibList.length;
+            while (currentFib < max) {
                 fibList.push(currentFib);
+                var lenFib = fibList.length;
                 currentFib = fibList[lenFib-1] + fibList[lenFib-2];
+            }
             return fibList;
-            }       /* Closes the while statement */
-        }           /* Closes the if statement */
-        else{
+        }
+        else {
             return [1, 1];
-            }       /* Closes else statement */
-        }           /* Closes the if statement */
-          /* Closes max statement */
-
-    function isEven(n){
-        return (n%2 === 0);
-    }
-
-    function sum(n1, n2){
-        return (n1 + n2);
-    }
-
-    function filter(aFunction, aList){
-        for (var i = 0; i < aList.length; i++){
-            newList = [];
-            var condition = aFunction(aList);
-            if (condition === true) {
-                newList.push(i);
             }
         }
-        return newList
+
+    function isEven(n) {
+        return (n%2 === 0); 
     }
 
-    console.log(sum(filter(isEven, fibonacciSet(4000000))))
+    function filter(aFunction, aList) {
+        var newList = [];
+        for (var i = 0; i < aList.length; i++){
+            var condition = aFunction(aList[i]);
+            if (condition === true) {
+                newList.push(aList[i]);
+            }
+        }
+        return newList;
+    }
+
+    function sum(finalList) {           //create function to get the sum of 
+        var finalValue = 0;
+        for (var n = 0; n < finalList.length; n++){
+            finalValue = finalValue + finalList[n];
+        }
+        return finalValue;               //the final fibonacciSet list 
+    };
+
+    console.log(sum(filter(isEven, fibonacciSet(4000000))));
+
+    // run the fibonacciSet function (which returns a list of all the fibonacci numbers), then filter by all even numbers (now we have an array of all even fibonacci numbers), then sum all the numbers in the array
+
   </script>
 </body>
 </html>
